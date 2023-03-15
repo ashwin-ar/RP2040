@@ -1,0 +1,3 @@
+/home/ashwin/Documents/pico/Timer_example/build/pioasm/CMakeFiles/rebuild_cache.dir
+/home/ashwin/Documents/pico/Timer_example/build/pioasm/CMakeFiles/edit_cache.dir
+/home/ashwin/Documents/pico/Timer_example/build/pioasm/CMakeFiles/pioasm.dir
