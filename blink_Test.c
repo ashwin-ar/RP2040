@@ -6,8 +6,8 @@
 
 #define pin_number 25
 
-void delay_ms_ip (uint64_t us){
-        uint64_t start = timer_hw->timerawl;
+void delay_us_ip (uint64_t us){
+        uint64_t start = timer_hw->timerawl; // timerawl register gives running time from booting of controller
         while (timer_hw->timerawl - start < us) {
             tight_loop_contents();}
 	return;
@@ -24,9 +24,9 @@ void main(){
 		sio_hw -> gpio_clr = 0xffff; // clearing 
 	while(1){
 		sio_hw -> gpio_out |= 1<<pin_number; //also can be written as sio -> gpio_set = 1<<pin_number;	Turns ON pin
-		delay_ms_ip(1000*1000); 
+		delay_us_ip(1000*1000); 
 		sio_hw -> gpio_out &=~ (1<< pin_number); //also can be written as sio -> gpio_clr = 1<<pin_number;	Turns OFF pin
-		delay_ms_ip(1000*1000);
+		delay_us_ip(1000*1000);
 		}
 	return ;
 }
